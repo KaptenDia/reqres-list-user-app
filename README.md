@@ -1,16 +1,20 @@
-# list_users_app
+# Flutter User List App
+This Flutter application demonstrates fetching and displaying user data from the ReqRes API. The app utilizes various Flutter features and best practices for building responsive UIs, handling asynchronous operations, and managing state using the Provider package.
 
-A new Flutter project.
+# Features:
+- User Data Fetching: Fetches user data from the ReqRes API using HTTP requests.
+- State Management: Uses Provider package for efficient state management and updating UI.
+- UI Components: Includes ListView and GridView for displaying user data in both list and grid layouts.
+- Sorting: Allows sorting of user data in ascending and descending order by name.
+- Loading State: Implements shimmer effect to indicate loading state when fetching data.
 
-## Getting Started
+# Technologies Used:
+- Flutter
+- Dart
+- Provider package
+- HTTP package
 
-This project is a starting point for a Flutter application.
+# Design Pattern : MVC(Model-View-Controller)
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshot
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
