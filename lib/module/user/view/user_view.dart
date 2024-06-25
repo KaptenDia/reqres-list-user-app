@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:list_users_app/module/user/provider/user_provider.dart';
 import 'package:list_users_app/module/user/widget/shimmer_user_card.dart';
+import 'package:list_users_app/module/user/widget/shimmer_user_grid_card.dart';
 import 'package:list_users_app/module/user/widget/user_card.dart';
 import 'package:provider/provider.dart';
 
@@ -36,18 +37,21 @@ class _UserViewState extends State<UserView> {
       body: dataProvider.isLoading
           ? Container(
               padding: const EdgeInsets.all(24),
-              child: ListView.separated(
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: 20,
-                    );
-                  },
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return const ShimmerUserCard();
-                  }),
+              child: dataProvider.isSelected == false
+                  ? ListView.separated(
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: 20,
+                        );
+                      },
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return const ShimmerUserCard();
+                      },
+                    )
+                  : const ShimmerUserGridCard(),
             )
           : RefreshIndicator(
               onRefresh: () async {
